@@ -25,7 +25,7 @@ const url = "https://lambda-times-api.herokuapp.com/articles";
 axios
   .get(url)
   .then(({ data }) => {
-    // console.log(data)
+    console.log(data)
     Object.values(data.articles).forEach((topic) => cardMaker(topic));
   })
   .catch((err) => console.log(err));
@@ -56,7 +56,10 @@ axios
       imageHolder.appendChild(img);
       author.appendChild(name);
 
+      cardDiv.addEventListener('click', () => console.log(article.headline));
+
       return cards;
     })
     return;
   }
+

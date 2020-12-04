@@ -17,7 +17,7 @@ import axios from 'axios'
 axios
   .get(url)
   .then(({ data }) => {
-    console.log(data)
+    // console.log(data)
     data.topics.forEach(topic => {
       tabMaker(topic)
     });
@@ -32,4 +32,9 @@ axios
     tabDiv.textContent = data;
 
     tabHolder.appendChild(tabDiv)
+    tabDiv.addEventListener('click', (e) => {
+      
+      console.log('clicked');
+    })
   };
+
